@@ -1,0 +1,52 @@
+<!Doctype HTML>
+<head>
+	<title> Helicopter </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body style="background:black">
+	<div id="hlc" > 
+	<img id="fanBody" src= "fan-rotate-removebg-preview.png" alt ="fan body" style="
+    position: absolute;
+    height: 300px;
+    width: auto;
+    background: transparent;
+    top: 60px;
+    left: 92px;
+" />
+	<br>
+	<img src= "fan-maker-removebg-preview.png" alt ="body" />
+	<br>
+	<button id="button" style="margin-left: 175px;padding: 20px;background: red;color: white;border: none;box-shadow: 5px 10px #888888;width: 140px;height: 45px;font-family: 'Roboto', sans-serif;font-size: 11px;text-transform: uppercase;letter-spacing: 2.5px;font-weight: 500;color: #000;background-color: #fff;border: none;border-radius: 45px;box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);transition: all 0.3s ease 0s;cursor: pointer;outline: none;"> STOP NOW </button>
+	
+	</div>
+	
+	
+<script>
+var angle = 0;
+var interval = null;
+var i = 0;
+while (i < 1000) {
+  task(i);
+   i++;
+}
+
+function task(i) {
+  interval = setInterval(function() {
+    angle += 90;
+	$('#fanBody').css('transform','rotate( ' + angle + 'deg)');
+  }, 500 * i);
+}
+
+$( "#button" ).click(function() {
+  clearInterval(interval);
+  alert("Helicopter is landing now" );
+});
+
+
+	
+	
+
+</script>
+</body>
+
+</html>
